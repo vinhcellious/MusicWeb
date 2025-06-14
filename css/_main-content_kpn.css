@@ -1,0 +1,40 @@
+/* css/main-content.css */
+
+/* Main content area */
+.khamphangay-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--dark-bg);
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.section-header .see-all {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.section-header .see-all:hover {
+    color: var(--spotify-green);
+    text-decoration: underline;
+}

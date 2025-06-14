@@ -1,0 +1,188 @@
+/* --- Overlay & Auth Forms --- */
+.auth-container {
+    background-color: #1e1e1e;
+    /* Specific color */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.overlay.hidden .auth-container {
+    transform: translateY(-50px);
+}
+
+.auth-container .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--light-grey);
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-container .close-button:hover {
+    color: var(--primary-red);
+}
+
+.auth-container h2 {
+    color: var(--primary-red);
+    margin-bottom: 25px;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-grey);
+    font-size: 0.9em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #333;
+    /* Specific color */
+    border-radius: 8px;
+    background-color: var(--medium-grey);
+    color: var(--white);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="tel"]:focus,
+.input-group input[type="date"]:focus {
+    border-color: var(--primary-red);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.input-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.switch-link {
+    display: block;
+    margin-top: 25px;
+    color: var(--light-grey);
+    font-size: 0.9em;
+}
+
+.switch-link a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.switch-link a:hover {
+    color: var(--secondary-pink);
+    text-decoration: underline;
+}
+
+/* --- Overlay cho Form Hồ sơ --- */
+.profile-container {
+    background-color: #1e1e1e;
+    /* Specific color */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.overlay.hidden .profile-container {
+    transform: translateY(-50px);
+}
+
+.profile-container h2 {
+    color: #ff3300;
+    /* Specific color */
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.6);
+}
+
+.profile-avatar-section {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-red);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.user-avatar-large:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.upload-button {
+    background: var(--profile-gradient);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.upload-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+.hidden-input {
+    display: none;
+}
+
+.profile-container .auth-button {
+    background: var(--profile-save-gradient);
+    margin-top: 25px;
+}
+
+.profile-container .auth-button:hover {
+    background: linear-gradient(to right, #cc0000, #ff00aa);
+    /* Specific colors */
+    transform: translateY(-3px) scale(1.03) skewX(-15deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.2);
+}

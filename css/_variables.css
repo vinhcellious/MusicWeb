@@ -1,0 +1,17 @@
+/* css/variables.css */
+
+:root {
+    --spotify-green: #1DB954;
+    --dark-bg: #121212;
+    --darker-bg: #000;
+    --card-bg: #181818;
+    --card-hover-bg: #282828;
+    --text-color: #fff;
+    --light-text: #b3b3b3;
+    --border-color: #282828;
+    --button-text-color: #000;
+    --button-bg: #fff;
+    --button-hover-bg: #f0f0f0;
+    --danger-color: #ff0000;
+    --library-item-bg: #242424;
+}

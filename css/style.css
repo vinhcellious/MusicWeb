@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Import các file CSS con */
+@import '_base.css';
+@import '_header.css';
+@import '_main-content.css';
+@import '_footer.css';
+@import '_forms.css';
+@import '_auth-pages.css';
+/* Các quy tắc chung hoặc fallback nếu cần */

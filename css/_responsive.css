@@ -1,0 +1,278 @@
+/* css/responsive.css */
+
+/* Ẩn các nút không cần thiết trên mobile (tùy chọn) */
+@media (max-width: 768px) {
+    .hidden-on-mobile {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .khamphangay-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar-left {
+        width: 100%;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .footer-links,
+    .language-selector {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .artist-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .notification-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .notification-content {
+        margin-bottom: 10px;
+    }
+
+    .card .play-overlay {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+
+    /* Music Player Bar Responsive */
+    .music-player-bar {
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .song-info {
+        min-width: 120px;
+        gap: 8px;
+    }
+
+    .song-info img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .song-info .details h4 {
+        font-size: 0.85em;
+    }
+
+    .song-info .details p {
+        font-size: 0.7em;
+    }
+
+    .player-controls {
+        gap: 6px;
+    }
+
+    .control-buttons {
+        gap: 12px;
+    }
+
+    .player-button {
+        font-size: 1em;
+    }
+
+    .player-button.play-pause-main {
+        font-size: 1.8em;
+    }
+
+    .progress-bar-container {
+        font-size: 0.7em;
+        gap: 6px;
+    }
+
+    .player-right-controls {
+        min-width: 120px;
+        gap: 8px;
+    }
+
+    .volume-control {
+        max-width: 100px;
+    }
+
+    .volume-control i {
+        font-size: 1em;
+    }
+
+    .seek-slider::-webkit-slider-thumb,
+    .seek-slider::-moz-range-thumb,
+    .volume-slider::-webkit-slider-thumb,
+    .volume-slider::-moz-range-thumb {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar-left {
+        padding: 10px;
+    }
+
+    .library-top-header {
+        font-size: 1em;
+    }
+
+    /* Nếu bạn có các card tạo playlist/podcast, hãy thêm style vào đây */
+    /* .create-playlist-card,
+    .discover-podcast-card {
+        padding: 10px;
+    } */
+
+    /* .create-playlist-card h3,
+    .discover-podcast-card h3 {
+        font-size: 1em;
+    } */
+
+    /* .create-playlist-card p,
+    .discover-podcast-card p {
+        font-size: 0.8em;
+    } */
+
+    /* .create-playlist-button,
+    .discover-podcast-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    } */
+
+    .footer-links a {
+        font-size: 0.7em;
+    }
+
+    .language-selector {
+        font-size: 0.8em;
+    }
+
+    .khamphangay-main-content {
+        padding: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 1.3em;
+    }
+
+    .section-header .see-all {
+        font-size: 0.8em;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .card h3 {
+        font-size: 0.9em;
+    }
+
+    .card p {
+        font-size: 0.75em;
+    }
+
+    .artist-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .notification-content p:first-child {
+        font-size: 1em;
+    }
+
+    .notification-content p:last-child {
+        font-size: 0.75em;
+    }
+
+    .register-trial-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Music Player Bar Responsive */
+    .music-player-bar {
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: 6px 10px;
+        gap: 5px;
+    }
+
+    .song-info {
+        min-width: unset;
+        gap: 5px;
+    }
+
+    .song-info img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .song-info .details {
+        display: none;
+        /* Ẩn chi tiết bài hát trên màn hình rất nhỏ để tiết kiệm không gian */
+    }
+
+    .player-controls {
+        gap: 4px;
+    }
+
+    .control-buttons {
+        gap: 8px;
+    }
+
+    .player-button {
+        font-size: 0.9em;
+        padding: 2px;
+    }
+
+    .player-button.play-pause-main {
+        font-size: 1.6em;
+        padding: 4px;
+    }
+
+    .progress-bar-container {
+        font-size: 0.65em;
+        gap: 4px;
+    }
+
+    .player-right-controls {
+        min-width: unset;
+        gap: 6px;
+    }
+
+    .volume-control {
+        max-width: 80px;
+        gap: 3px;
+    }
+
+    .volume-control i {
+        font-size: 0.9em;
+    }
+
+    .seek-slider::-webkit-slider-thumb,
+    .seek-slider::-moz-range-thumb,
+    .volume-slider::-webkit-slider-thumb,
+    .volume-slider::-moz-range-thumb {
+        width: 8px;
+        height: 8px;
+    }
+}
