@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ người dùng - VinhCellious</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-page-container">
+        <div class="profile-container" id="profile-form-container">
+            <a href="index.html" class="close-button">×</a>
+            <h2>Hồ sơ của bạn</h2>
+            <div class="profile-avatar-section">
+                <img src="Assets/Images/default-avatar.png" alt="Avatar" class="user-avatar-large"
+                    id="profile-current-avatar">
+                <label for="profile-avatar-upload" class="upload-button">Thay đổi ảnh đại diện</label>
+                <input type="file" id="profile-avatar-upload" accept="image/*" class="hidden-input">
+            </div>
+            <div class="input-group">
+                <label for="profile-full-name">Họ và tên</label>
+                <input type="text" id="profile-full-name" placeholder="Nhập họ và tên của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-email">Email</label>
+                <input type="email" id="profile-email" placeholder="Nhập email của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-phone">Số điện thoại</label>
+                <input type="tel" id="profile-phone" placeholder="Nhập số điện thoại của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-dob">Ngày sinh</label>
+                <input type="date" id="profile-dob">
+            </div>
+            <button class="auth-button" id="save-profile-button"><span>Lưu thay đổi</span></button>
+            <p id="profile-message" class="message"></p>
+        </div>
+    </div>
+
+    <script src="Js/common.js"></script>
+    <script src="Js/profile.js"></script>
+</body>
+
+</html>

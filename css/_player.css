@@ -1,0 +1,246 @@
+/* css/player.css */
+
+/* Music Player Bar */
+.music-player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 8px 16px;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    gap: 10px;
+}
+
+.music-player-bar.hidden {
+    transform: translateY(100%);
+}
+
+.music-player-bar.active {
+    transform: translateY(0);
+}
+
+/* Left Section - Song Info */
+.song-info {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: 180px;
+    gap: 10px;
+}
+
+.song-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.song-info .details {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.song-info .details h4 {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-info .details p {
+    margin: 2px 0 0;
+    font-size: 0.75em;
+    color: var(--light-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Center Section - Player Controls */
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.player-button {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.1s ease;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.player-button:hover {
+    color: var(--text-color);
+    transform: scale(1.05);
+}
+
+/* Active state for shuffle/repeat buttons */
+.player-button.active-control {
+    color: var(--spotify-green);
+}
+
+/* Nút Play/Pause chính */
+.player-button.play-pause-main {
+    font-size: 2em;
+    color: var(--text-color);
+    padding: 6px;
+}
+
+.player-button.play-pause-main i {
+    color: var(--text-color);
+}
+
+.player-button.play-pause-main:hover i {
+    color: var(--spotify-green);
+}
+
+/* Thanh tiến trình */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    font-size: 0.75em;
+    color: var(--light-text);
+}
+
+.seek-slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: var(--border-color);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--spotify-green) var(--seek-before-width, 0%), var(--border-color) var(--seek-before-width, 0%));
+}
+
+.seek-slider::-webkit-slider-runnable-track {
+    background: transparent;
+}
+
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.seek-slider:hover::-webkit-slider-thumb {
+    background: var(--spotify-green);
+}
+
+.seek-slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.seek-slider:hover::-moz-range-thumb {
+    background: var(--spotify-green);
+}
+
+/* Right Section - Volume and Other Controls */
+.player-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    min-width: 180px;
+}
+
+.player-right-controls .player-button {
+    font-size: 1.1em;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-grow: 1;
+    max-width: 120px;
+}
+
+.volume-control i {
+    font-size: 1.1em;
+}
+
+.volume-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: var(--border-color);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(to right, var(--spotify-green) var(--volume-before-width, 70%), var(--border-color) var(--volume-before-width, 70%));
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+    background: transparent;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.volume-slider:hover::-webkit-slider-thumb {
+    background: var(--spotify-green);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-color);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.volume-slider:hover::-moz-range-thumb {
+    background: var(--spotify-green);
+}

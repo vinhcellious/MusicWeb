@@ -1,0 +1,33 @@
+/* Styles for standalone auth pages */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark-grey);
+    /* Ensure background is consistent */
+}
+
+.auth-page-container {
+    padding: 20px;
+    /* Add some padding around the form */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override close button for standalone pages */
+.auth-page .auth-container .close-button {
+    text-decoration: none;
+    color: var(--light-grey);
+    font-size: 2em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: color 0.3s ease;
+}
+
+.auth-page .auth-container .close-button:hover {
+    color: var(--primary-red);
+}

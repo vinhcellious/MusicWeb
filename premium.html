@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinhcellious Premium - Nâng cấp trải nghiệm nghe nhạc của bạn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/premium.css">
+    <link rel="stylesheet" href="Css/style.css">
+
+</head>
+
+<body>
+    <header class="spotify-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="Images/logo.png" alt="VinhCellious Logo" class="new-logo">
+            </a>
+        </div>
+        <div class="header-center-content">
+            <div class="search-and-icons">
+                <i class="fas fa-home home-icon"></i>
+                <div class="search-bar">
+                    <i class="fas fa-search" style="color: #b3b3b3; margin-right: 10px;"></i>
+                    <input type="text" placeholder="Bạn muốn nghe gì?">
+                </div>
+                <i class="fas fa-bell notification-icon"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="premium.html" class="nav-link">Premium <i class="fas fa-crown animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Hỗ trợ <i class="fas fa-info-circle animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Tải xuống <i class="fas fa-download animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Cài đặt ứng dụng <i class="fas fa-mobile-alt animated-icon-small"></i></a>
+
+            <div id="auth-buttons">
+                <a href="register.html" class="register-button"><span>Đăng ký</span></a>
+                <a href="login.html" class="login-button"><span>Đăng nhập</span></a>
+            </div>
+
+            <div id="user-profile" class="hidden">
+                <img src="Assets/Images/default-avatar.png" alt="Avatar" class="user-avatar" id="header-user-avatar">
+                <span class="user-greeting">Xin chào, <span id="display-username"></span>!</span>
+                <div class="profile-dropdown">
+                    <a href="profile.html" id="profile-link">Hồ sơ của tôi</a>
+                    <a href="#" id="logout-button">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Nâng cấp trải nghiệm nghe nhạc của bạn</h1>
+                <p class="subtitle">Đăng ký Premium để nghe nhạc không giới hạn, không quảng cáo, và nhiều hơn nữa.</p>
+                <a href="#plans" class="cta-button">Dùng thử Premium</a>
+                <p class="trial-info">Miễn phí 1 tháng. Sau đó chỉ $5.99/tháng. Áp dụng các điều khoản và điều kiện.</p>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits-section">
+            <div class="container">
+                <h2>Tại sao nên nâng cấp lên Premium?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-ad fa-3x"></i>
+                        <h3>Nghe nhạc không gián đoạn</h3>
+                        <p>Thưởng thức âm nhạc mà không bị quảng cáo làm phiền.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-download fa-3x"></i>
+                        <h3>Tải nhạc về và nghe offline</h3>
+                        <p>Lưu những bài hát yêu thích của bạn để nghe mọi lúc, mọi nơi.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-headphones-alt fa-3x"></i>
+                        <h3>Chất lượng âm thanh tuyệt đỉnh</h3>
+                        <p>Trải nghiệm âm nhạc với chất lượng âm thanh cao hơn.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-music fa-3x"></i>
+                        <h3>Phát nhạc theo yêu cầu</h3>
+                        <p>Bỏ qua không giới hạn, và chọn bất kỳ bài hát nào bạn muốn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="plans-section">
+            <div class="container">
+                <h2>Chọn gói Premium phù hợp với bạn</h2>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h3>Premium Cá nhân</h3>
+                        <p class="price">$5.99<span>/tháng</span></p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Nghe không quảng cáo</li>
+                            <li><i class="fas fa-check"></i> Tải nhạc về nghe offline</li>
+                            <li><i class="fas fa-check"></i> Nghe nhạc theo yêu cầu</li>
+                            <li><i class="fas fa-check"></i> 1 tài khoản Premium</li>
+                        </ul>
+                        <button class="select-plan-button">Dùng thử 1 tháng miễn phí</button>
+                    </div>
+                    <div class="plan-card featured">
+                        <h3>Premium Gia đình</h3>
+                        <p class="price">$9.99<span>/tháng</span></p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Nghe không quảng cáo</li>
+                            <li><i class="fas fa-check"></i> Tải nhạc về nghe offline</li>
+                            <li><i class="fas fa-check"></i> Nghe nhạc theo yêu cầu</li>
+                            <li><i class="fas fa-check"></i> Lên đến 6 tài khoản Premium</li>
+                            <li><i class="fas fa-check"></i> Family Mix: playlist cho gia đình</li>
+                            <li><i class="fas fa-check"></i> Chặn nhạc có nội dung người lớn</li>
+                        </ul>
+                        <button class="select-plan-button">Dùng thử 1 tháng miễn phí</button>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Premium Sinh viên</h3>
+                        <p class="price">$2.99<span>/tháng</span></p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Nghe không quảng cáo</li>
+                            <li><i class="fas fa-check"></i> Tải nhạc về nghe offline</li>
+                            <li><i class="fas fa-check"></i> Nghe nhạc theo yêu cầu</li>
+                            <li><i class="fas fa-check"></i> Giảm giá cho sinh viên đủ điều kiện</li>
+                        </ul>
+                        <button class="select-plan-button">Dùng thử 1 tháng miễn phí</button>
+                    </div>
+                </div>
+                <p class="disclaimer">Áp dụng các điều khoản và điều kiện. Các gói có thể khác nhau tùy khu vực.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Câu hỏi thường gặp</h2>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tôi có thể hủy bất cứ lúc nào không?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vâng, bạn có thể hủy gói Premium của mình bất cứ lúc nào trên trang tài khoản của bạn. Bạn
+                            vẫn có thể sử dụng Premium cho đến ngày thanh toán tiếp theo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Premium khác gì so với gói miễn phí?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Với Premium, bạn có thể nghe nhạc không giới hạn, không có quảng cáo, tải nhạc về nghe
+                            offline, và chọn bất kỳ bài hát nào bạn muốn. Gói miễn phí có quảng cáo và một số hạn chế về
+                            tính năng.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tôi có phải nhập thông tin thanh toán khi dùng thử miễn phí không?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Có, bạn cần cung cấp thông tin thanh toán để bắt đầu dùng thử miễn phí. Tuy nhiên, bạn sẽ
+                            không bị tính phí cho đến khi thời gian dùng thử kết thúc. Bạn có thể hủy bất cứ lúc nào
+                            trước khi thời gian dùng thử kết thúc để tránh bị tính phí.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="premium-footer">
+        <div class="premium-footer-content">
+            <div class="footer-links-group">
+                <h4>Công ty</h4>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Việc làm</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Cộng đồng</h4>
+                <ul>
+                    <li><a href="#">Dành cho nghệ sĩ</a></li>
+                    <li><a href="#">Nhà phát triển</a></li>
+                    <li><a href="#">Quảng cáo</a></li>
+                    <li><a href="#">Nhà đầu tư</a></li>
+                    <li><a href="#">Nhà cung cấp</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Liên kết hữu ích</h4>
+                <ul>
+                    <li><a href="#">Hỗ trợ</a></li>
+                    <li><a href="#">Ứng dụng di động miễn phí</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Spotify AB</p>
+            <ul>
+                <li><a href="#">Hợp pháp</a></li>
+                <li><a href="#">Trung tâm bảo mật</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+                <li><a href="#">Cài đặt cookie</a></li>
+                <li><a href="#">Giới thiệu quảng cáo</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Thanh toán gói <span id="modal-plan-name"></span></h2>
+            <p>Vui lòng chọn phương thức thanh toán:</p>
+
+            <div class="payment-options">
+                <button class="payment-option-button active" data-method="qr">
+                    <i class="fas fa-qrcode"></i> Thanh toán bằng mã QR
+                </button>
+                <button class="payment-option-button" data-method="bank-transfer">
+                    <i class="fas fa-university"></i> Chuyển khoản ngân hàng
+                </button>
+            </div>
+
+            <div id="qr-payment-section" class="payment-section active">
+                <h3>Quét mã QR để thanh toán</h3>
+                <img id="qr-code-image" src="https://via.placeholder.com/200?text=QR+Code" alt="Mã QR thanh toán">
+                <p>Số tiền: <strong id="qr-amount"></strong></p>
+                <p>Nội dung chuyển khoản: <strong id="qr-content"></strong></p>
+                <p class="warning-text">Vui lòng quét mã và chuyển khoản đúng số tiền và nội dung để giao dịch được xử
+                    lý.</p>
+                <button class="copy-button" data-target="qr-content"><i class="far fa-copy"></i> Sao chép nội
+                    dung</button>
+            </div>
+
+            <div id="bank-payment-section" class="payment-section">
+                <h3>Thông tin chuyển khoản ngân hàng</h3>
+                <div class="bank-info-item">
+                    <p>Ngân hàng:</p>
+                    <strong id="bank-name">Ngân hàng ABC</strong>
+                    <button class="copy-button" data-target="bank-name"><i class="far fa-copy"></i></button>
+                </div>
+                <div class="bank-info-item">
+                    <p>Số tài khoản:</p>
+                    <strong id="bank-account-number">1234567890</strong>
+                    <button class="copy-button" data-target="bank-account-number"><i class="far fa-copy"></i></button>
+                </div>
+                <div class="bank-info-item">
+                    <p>Chủ tài khoản:</p>
+                    <strong id="bank-account-holder">NGUYEN VAN A</strong>
+                    <button class="copy-button" data-target="bank-account-holder"><i class="far fa-copy"></i></button>
+                </div>
+                <div class="bank-info-item">
+                    <p>Số tiền:</p>
+                    <strong id="bank-amount"></strong>
+                    <button class="copy-button" data-target="bank-amount"><i class="far fa-copy"></i></button>
+                </div>
+                <div class="bank-info-item">
+                    <p>Nội dung chuyển khoản:</p>
+                    <strong id="bank-content"></strong>
+                    <button class="copy-button" data-target="bank-content"><i class="far fa-copy"></i></button>
+                </div>
+                <p class="warning-text">Vui lòng chuyển khoản đúng số tiền và nội dung để giao dịch được xử lý.</p>
+            </div>
+
+            <button class="complete-payment-button">Tôi đã chuyển khoản</button>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="Js/common.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/Js/profile.js"></script>
+    <script src="js/premium.js"></script>
+</body>
+
+</html>

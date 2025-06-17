@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinhCellious - Khám phá Âm nhạc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/khamphangay.css">
+</head>
+
+<body>
+    <header class="spotify-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="Images/logo.png" alt="VinhCellious Logo" class="new-logo">
+            </a>
+        </div>
+        <div class="header-center-content">
+            <div class="search-and-icons">
+                <i class="fas fa-home home-icon"></i>
+                <div class="search-bar">
+                    <i class="fas fa-search" style="color: #b3b3b3; margin-right: 10px;"></i>
+                    <input type="text" placeholder="Bạn muốn nghe gì?" id="header-search-input">
+                </div>
+                <i class="fas fa-bell notification-icon"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="#" class="nav-link">Premium <i class="fas fa-crown animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Hỗ trợ <i class="fas fa-info-circle animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Tải xuống <i class="fas fa-download animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Cài đặt ứng dụng <i class="fas fa-mobile-alt animated-icon-small"></i></a>
+
+            <div id="auth-buttons">
+                <a href="register.html" class="register-button"><span>Đăng ký</span></a>
+                <a href="login.html" class="login-button"><span>Đăng nhập</span></a>
+            </div>
+
+            <div id="user-profile" class="hidden">
+                <img src="Assets/Images/default-avatar.png" alt="Avatar" class="user-avatar" id="header-user-avatar">
+                <span class="user-greeting">Xin chào, <span id="display-username"></span>!</span>
+                <div class="profile-dropdown">
+                    <a href="profile.html" id="profile-link">Hồ sơ của tôi</a>
+                    <a href="#" id="logout-button">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="khamphangay-container">
+        <aside class="sidebar-left">
+            <div class="library-top-header">
+                <div class="library-top-title">
+                    <i class="fas fa-book-open"></i>
+                    <span>Thư viện</span>
+                </div>
+                <div class="library-top-actions">
+                    <button class="create-button" id="create-new-content"><i class="fas fa-plus"></i> Tạo</button>
+                    <button class="expand-button" id="expand-library"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <div class="library-tabs">
+                <button class="tab-button active" id="playlist-tab">Playlist</button>
+                <button class="tab-button" id="podcast-tab">Podcast và chương trình</button>
+            </div>
+
+            <div class="library-controls">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm trong thư viện của bạn" id="sidebar-search-input">
+                </div>
+                <div class="sort-options">
+                    <span>Gần đây</span>
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+            <div class="library-content-list">
+                <div class="liked-songs-card library-item" id="liked-songs-card">
+                    <div class="liked-songs-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="liked-songs-details">
+                        <h3>Bài hát đã thích</h3>
+                        <p>Danh sách phát • <span id="liked-songs-count">0</span> bài hát</p>
+                    </div>
+                </div>
+
+                <div class="your-episodes-card library-item">
+                    <div class="your-episodes-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div class="your-episodes-details">
+                        <h3>Tập của bạn</h3>
+                        <p>Các tập đã lưu và tải xuống</p>
+                    </div>
+                </div>
+
+                <div class="liked-songs-dynamic-list" id="liked-songs-dynamic-list">
+                    <!-- Liked songs will be dynamically added here -->
+                </div>
+
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Pháp lý</a>
+                <a href="#">Trung tâm bảo mật</a>
+                <a href="#">Chính sách quyền riêng tư</a>
+                <a href="#">Cài đặt Cookie</a>
+                <a href="#">Giới thiệu quảng cáo</a>
+                <a href="#">Trợ năng</a>
+            </div>
+            <div class="language-selector">
+                <i class="fas fa-globe"></i>
+                <span>Tiếng Việt</span>
+            </div>
+        </aside>
+
+        <main class="khamphangay-main-content">
+            <section class="section">
+                <div class="section-header">
+                    <h2>Những bài hát thịnh hành</h2>
+                    <a href="#" class="see-all">Hiện tất cả</a>
+                </div>
+                <div class="cards-grid">
+                    <div class="card music-card" data-src="/mp3/song1.mp3" data-title="Lose My Mind"
+                        data-artist="NEFFEX" data-image="/images/images1.jpg" data-id="Lose My Mind">
+                        <img src="/images/images1.jpg" onerror="this.src='/images/images1'" alt="Album Art">
+                        <h3>Lose My Mind</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song2.mp3" data-title="Comming For You"
+                        data-artist="NEFFEX" data-image="/images/images2.jpg" data-id="Comming For You">
+                        <img src="/images/images2.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>Comming For You</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song3.mp3" data-title="No Sleep" data-artist="NEFFEX"
+                        data-image="/images/images3.jpg" data-id="No Sleep">
+                        <img src="/images/images3.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>No Sleep</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song4.mp3" data-title="Careless" data-artist="NEFFEX"
+                        data-image="/images/images4.jpg" data-id="Careless">
+                        <img src="/images/images4.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>Careless</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song5.mp3" data-title="Destiny" data-artist="NEFFEX"
+                        data-image="/images/images5.jpg" data-id="Destiny">
+                        <img src="/images/images5.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>Destiny</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song6.mp3" data-title="Save A Life" data-artist="NEFFEX"
+                        data-image="/images/images6.jpg" data-id="Save A Life">
+                        <img src="/images/images6.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>Save A Life</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song7.mp3" data-title="SOMETHING YOU COULD NEVER OWN"
+                        data-artist="NEFFEX" data-image="/images/images7.jpg" data-id="SOMETHING YOU COULD NEVER OWN">
+                        <img src="/images/images7.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>SOMETHING YOU COULD NEVER OWN</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/song8.mp3" data-title="Inspired" data-artist="NEFFEX"
+                        data-image="/images/images8.jpg" data-id="Inspired">
+                        <img src="/images/images8.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>Inspired</h3>
+                        <p>NEFFEX</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>Nghệ sĩ phổ biến</h2>
+                    <a href="#" class="see-all">Hiện tất cả</a>
+                </div>
+                <div class="cards-grid artist-grid">
+                    <div class="card artist-card">
+                        <img src="/images/musical1.jpg" alt="Artist Photo">
+                        <h3>Neffex</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical2.jpg" alt="Artist Photo">
+                        <h3>Sơn Tùng</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical3.jpg" alt="Artist Photo">
+                        <h3>Justin baby</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical4.jpg" alt="Artist Photo">
+                        <h3>Davidlad</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical5.jpg" alt="Artist Photo">
+                        <h3>Vinh Râu & Thái Vũ</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical6.jpg" alt="Artist Photo">
+                        <h3>Vinh Mập</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical7.jpg" alt="Artist Photo">
+                        <h3>Lâm Lỏ</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                    <div class="card artist-card">
+                        <img src="/images/musical8.jpg" alt="Artist Photo">
+                        <h3>Gayyyy</h3>
+                        <p>Nghệ sĩ</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>Album nhạc dài</h2>
+                    <a href="#" class="see-all">Hiện tất cả</a>
+                </div>
+                <div class="cards-grid">
+                    <div class="card music-card" data-src="/mp3/phonk1.mp3" data-title="THE BEST BRAZILIAN PHONK 2025"
+                        data-artist=" MUSIC PLAYLIST [GYM, AGGRESSIVE, FUNK]" data-image="/images/phonk8 (1).jpg"
+                        data-id="THE BEST BRAZILIAN PHONK 2025">
+                        <img src="/images/phonk8 (1).jpg" onerror="this.src='/Images/default-album.png'"
+                            alt="Album Art">
+                        <h3>THE BEST BRAZILIAN PHONK 2025</h3>
+                        <p> MUSIC PLAYLIST [GYM, AGGRESSIVE, FUNK]</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk2.mp3" data-title="Phonk Music Mix 2025"
+                        data-artist="Jungkook" data-image="/images/phonk8 (2).jpg" data-id="Phonk Music Mix 2025">
+                        <img src="/images/phonk8 (2).jpg" onerror="this.src='/Images/default-album.png'"
+                            alt="Album Art">
+                        <h3>Phonk Music Mix 2025</h3>
+                        <p>Фонка</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk3.mp3"
+                        data-title="AGRESSIVE BRAZILIAN PHONK 2025 ???? " data-artist="sayonaraあ"
+                        data-image="/images/phonk8 (3).jpg" data-id="AGRESSIVE BRAZILIAN PHONK 2025 ????">
+                        <img src="/images/phonk8 (3).jpg" onerror="this.src='/Images/default-album.png'"
+                            alt="Album Art">
+                        <h3>AGRESSIVE BRAZILIAN PHONK 2025 ????</h3>
+                        <p>sayonaraあ</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk4.mp3"
+                        data-title="AURA = ♾️ | VIRAL AURA MUSIC PLAYLIST 2025" data-artist="Jungkook"
+                        data-image="images/phonk8 (4).jpg" data-id=" AURA = ♾️ | VIRAL AURA MUSIC PLAYLIST 2025">
+                        <img src="images/phonk8 (4).jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>AURA = ♾️ | VIRAL AURA MUSIC PLAYLIST 2025</h3>
+                        <p> EMPIRE PHONK 🔥</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk5.mp3"
+                        data-title="ABSOLUTE - AURA +++ BOUNCE FUNK 👿" data-artist="GHOSTFOMK"
+                        data-image="images/phonk8 (5).jpg" data-id="ABSOLUTE - AURA +++ BOUNCE FUNK 👿">
+                        <img src="images/phonk8 (5).jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>ABSOLUTE - AURA +++ BOUNCE FUNK 👿</h3>
+                        <p>GHOSTFOMK</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk6.mp3" data-title="BOUNCE PHONK x MONTAGEM 😈☠️"
+                        data-artist=" PHONK Empire" data-image="images/phonk8 (6).jpg"
+                        data-id="BOUNCE PHONK x MONTAGEM 😈☠️">
+                        <img src="images/phonk8 (6).jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>BOUNCE PHONK x MONTAGEM 😈☠️</h3>
+                        <p> PHONK Empire</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk7.mp3" data-title="ADRENALINE 📈📈📈"
+                        data-artist="Спасибо, что живо" data-image="images/phonk8 (7).jpg" data-id="ADRENALINE 📈📈📈">
+                        <img src="images/phonk8 (7).jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>ADRENALINE 📈📈📈</h3>
+                        <p>Спасибо, что живо</p>
+                    </div>
+                    <div class="card music-card" data-src="/mp3/phonk8.mp3" data-title=" VIRAL AURA PHONK SONGS"
+                        data-artist="Phonk CRYYY" data-image="images/phonk9.jpg" data-id="VIRAL AURA PHONK SONGS">
+                        <img src="images/phonk9.jpg" onerror="this.src='/Images/default-album.png'" alt="Album Art">
+                        <h3>VIRAL AURA PHONK SONGS</h3>
+                        <p>Phonk CRYYY</p>
+                    </div>
+                </div>
+            </section>
+            <footer class="main-footer">
+                <div class="footer-columns">
+                    <div class="footer-column footer-brand">
+                        <img src="/Images/logo-footer.png" alt="VinhCellious Logo" class="footer-logo">
+                        <h3 class="footer-title footer-contact-title"><i class="fas fa-map-marker-alt footer-icon"></i>
+                            Địa chỉ
+                        </h3>
+                        <div class="contact-info">
+                            <p>Số 123, đường ABC, quận XYZ, TP. Hồ Chí Minh</p>
+                            <p><i class="fas fa-phone footer-icon"></i> Điện thoại: (098) 772939</p>
+                            <p><i class="far fa-envelope footer-icon"></i> Email: vinhcellious.edu.vn</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-title">Công ty</h3>
+                        <ul>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Việc làm</a></li>
+                            <li><a href="#">For the Record</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-title">Cộng đồng</h3>
+                        <ul>
+                            <li><a href="#">For Artists</a></li>
+                            <li><a href="#">Nhà phát triển</a></li>
+                            <li><a href="#">Quảng cáo</a></li>
+                            <li><a href="#">Nhà đầu tư</a></li>
+                            <li><a href="#">Nhà cung cấp</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-title">Liên kết hữu ích</h3>
+                        <ul>
+                            <li><a href="#">Hỗ trợ</a></li>
+                            <li><a href="#">Ứng dụng di động miễn phí</a></li>
+                        </ul>
+                        <h3 class="footer-title footer-packages-title">Premium by VinhCellious</h3>
+                        <ul>
+                            <li><a href="#">Premium</a></li>
+                            <li><a href="#">Miễn phí</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column footer-map">
+                        <h3 class="footer-title"><i class="far fa-clock footer-icon"></i> Giờ làm việc</h3>
+                        <p>Thứ 2 - Thứ 6: 24/24h</p>
+                        <p>Thứ 7: 24/24h</p>
+                        <p>Chủ nhật: 24/24h</p>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6548773950456!2d106.68065097486846!3d10.76106098938221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f207399f36f%3A0xf6d92634d58852e6!2sBen%20Thanh%20Market!5e0!3m2!1sen!2s-0!4v1717392652199!5m2!1sen!2s-0"
+                                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>© 2025 VinhCellious</p>
+                    </div>
+                    <div class="footer-legal-links">
+                        <a href="#">Pháp lý</a>
+                        <a href="#">Trung tâm bảo mật</a>
+                        <a href="#">Chính sách quyền riêng tư</a>
+                        <a href="#">Cookie</a>
+                        <a href="#">Giới thiệu quảng cáo</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <div class="music-player-bar hidden" id="music-player-bar">
+        <audio id="audio-player" src="" preload="metadata"></audio>
+
+        <div class="song-info">
+            <img src="/Images/default-album.png" alt="Album Art" id="player-album-art">
+            <div class="details">
+                <h4 id="player-song-title">Chọn một bài hát để bắt đầu</h4>
+                <p id="player-artist-name"></p>
+            </div>
+            <button class="player-button hidden-on-mobile"><i class="fas fa-picture-in-picture"></i></button>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button id="shuffle-button" class="player-button"><i class="fas fa-shuffle"></i></button>
+                <button id="prev-button" class="player-button"><i class="fas fa-step-backward"></i></button>
+                <button id="play-pause-button" class="player-button play"><i class="fas fa-play"></i></button>
+                <button id="next-button" class="player-button"><i class="fas fa-step-forward"></i></button>
+                <button id="repeat-button" class="player-button"><i class="fas fa-repeat"></i></button>
+            </div>
+            <div class="progress-bar-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="seek-slider" class="seek-slider" value="0" min="0" max="100" step="1">
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right-controls">
+            <button class="player-button" id="player-heart-button">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="player-button hidden-on-mobile"><i class="fas fa-microphone-alt"></i></button>
+            <button class="player-button hidden-on-mobile"><i class="fas fa-list-ul"></i></button>
+            <button class="player-button hidden-on-mobile"><i class="fas fa-desktop"></i></button>
+            <div class="volume-control">
+                <button id="volume-icon" class="player-button"><i class="fas fa-volume-up"></i></button>
+                <input type="range" id="volume-slider" min="0" max="100" value="70">
+            </div>
+            <button class="player-button hidden-on-mobile"><i class="fas fa-expand"></i></button>
+        </div>
+    </div>
+
+
+    <div class="notification-bar">
+        <div class="notification-content">
+            <p>
+                <i class="fas fa-compact-disc"></i>
+                Xem trước VinhCellious
+            <p>
+                Đăng ký để nghe không giới hạn giới hạn các bài hát và podcast với quảng cáo không thường xuyên.
+                Không cần thẻ tín dụng.
+            </p>
+        </div>
+        <button class="register-trial-button"><span>Đăng ký miễn phí</span><i class="fas fa-arrow-right"></i></button>
+    </div>
+
+
+    <div class="overlay hidden" id="auth-overlay">
+        <div class="auth-container" id="register-form-container">
+            <button class="close-button" id="close-register-form-button">x</button>
+            <h2>Đăng ký</h2>
+            <div class="input-group">
+                <label for="register-username">Tài khoản</label>
+                <input type="text" id="register-username" placeholder="Nhập tài khoản của bạn">
+            </div>
+            <div class="input-group">
+                <label for="register-password">Mật khẩu</label>
+                <input type="password" id="register-password" placeholder="Nhập mật khẩu của bạn">
+            </div>
+            <div class="input-group">
+                <label for="register-confirm-password">Xác nhận mật khẩu</label>
+                <input type="password" id="register-confirm-password" placeholder="Xác nhận mật khẩu">
+            </div>
+            <div class="input-group">
+                <input type="checkbox" id="is-admin-register">
+                <label for="is-admin-register" style="display: inline; margin-left: 5px;"></label>
+            </div>
+            <button class="auth-button" id="register-submit-button"><span>Đăng ký</span></button>
+            <p class="switch-link">Đã có tài khoản? <a href="#" id="show-login-from-register">Đăng nhập</a></p>
+            <p id="register-message" class="message"></p>
+        </div>
+
+        <div class="auth-container hidden" id="login-form-container">
+            <button class="close-button" id="close-login-form-button">×</button>
+            <h2>Đăng nhập</h2>
+            <div class="input-group">
+                <label for="login-username">Tài khoản</label>
+                <input type="text" id="login-username" placeholder="Nhập tài khoản của bạn">
+            </div>
+            <div class="input-group">
+                <label for="login-password">Mật khẩu</label>
+                <input type="password" id="login-password" placeholder="Nhập mật khẩu của bạn">
+            </div>
+            <button class="auth-button" id="login-submit-button"><span>Đăng nhập</span></button>
+            <p class="switch-link">Chưa có tài khoản? <a href="#" id="show-register-from-login">Đăng ký</a></p>
+            <p id="login-message" class="message"></p>
+        </div>
+    </div>
+    <div id="user-profile" class="hidden">
+        <img src="Assets/Images/default-avatar.png" alt="Avatar" class="user-avatar" id="header-user-avatar">
+        <span class="user-greeting">Xin chào, <span id="display-username"></span>!</span>
+        <div class="profile-dropdown">
+            <a href="profile.html" id="profile-link">Hồ sơ của tôi</a>
+            <a href="#" id="logout-button">Đăng xuất</a>
+        </div>
+    </div>
+    <div class="overlay hidden" id="profile-overlay">
+        <div class="profile-container" id="profile-form-container">
+            <button class="close-button" id="close-profile-form-button">×</button>
+            <h2>Hồ sơ của bạn</h2>
+            <div class="profile-avatar-section">
+                <img src="/Images/default-avatar.png" alt="Avatar" class="user-avatar-large"
+                    id="profile-current-avatar">
+                <label for="profile-avatar-upload" class="upload-button">Thay đổi ảnh đại diện</label>
+                <input type="file" id="profile-avatar-upload" accept="image/*" class="hidden-input">
+            </div>
+            <div class="input-group">
+                <label for="profile-full-name">Họ và tên</label>
+                <input type="text" id="profile-full-name" placeholder="Nhập họ và tên của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-email">Email</label>
+                <input type="email" id="profile-email" placeholder="Nhập email của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-phone">Số điện thoại</label>
+                <input type="tel" id="profile-phone" placeholder="Nhập số điện thoại của bạn">
+            </div>
+            <div class="input-group">
+                <label for="profile-dob">Ngày sinh</label>
+                <input type="date" id="profile-dob">
+            </div>
+            <button class="auth-button" id="save-profile-button"><span>Lưu thay đổi</span></button>
+            <p id="profile-message" class="message"></p>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/Js/profile.js"></script>
+    <script src="/Js/main_kpn.js"></script>
+    <script src="/Js/khamphangay.js"></script>
+
+
+</body>
+
+</html>

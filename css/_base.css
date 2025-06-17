@@ -1,0 +1,151 @@
+/* --- Global & Body --- */
+:root {
+    /* Colors */
+    --primary-red: #FF0000;
+    --secondary-pink: #FF69B4;
+    --black: #000;
+    --dark-grey: #121212;
+    --medium-grey: #282828;
+    --light-grey: #b3b3b3;
+    --white: #fff;
+    --success-green: #4CAF50;
+    --error-red: #f44336;
+    --admin-gold: #FFD700;
+    --highlight-yellow-green: linear-gradient(to right, #FFFF00, #00FF00);
+    --slogan-gradient: linear-gradient(to right, #FF0000, #FF69B4, #FF0000);
+    --profile-gradient: linear-gradient(to right, #b3000073, #ff009d);
+    --profile-save-gradient: linear-gradient(to right, #ff0000, #e100ff);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Base button styles */
+.login-button,
+.register-button,
+.explore-button,
+.auth-button {
+    background: linear-gradient(to right, var(--primary-red), var(--secondary-pink));
+    color: var(--white);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: skewX(-15deg);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.login-button span,
+.register-button span,
+.explore-button span,
+.auth-button span {
+    display: block;
+    transform: skewX(15deg);
+}
+
+.login-button:hover,
+.register-button:hover,
+.auth-button:hover {
+    transform: translateY(-3px) scale(1.05) skewX(-15deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.2);
+}
+
+.explore-button:hover {
+    transform: translateY(-5px) scale(1.05) skewX(-15deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.2);
+}
+
+/* Animated icons */
+.animated-icon-small {
+    font-size: 0.8em;
+    color: var(--primary-red);
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+.animated-icon {
+    animation: rotateIcon 5s linear infinite;
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Messages for forms */
+.message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.message.success {
+    color: var(--success-green);
+}
+
+.message.error {
+    color: var(--error-red);
+}
+
+/* Overlay base styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

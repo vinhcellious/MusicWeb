@@ -1,0 +1,280 @@
+/* --- Slogan Marquee --- */
+.slogan-marquee-container {
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    background: var(--slogan-gradient);
+    background-size: 300% auto;
+    animation: background-sparkle 4s linear infinite;
+    padding: 8px 0;
+    height: 40px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.5);
+    margin-top: 0;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+
+.slogan-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.slogan-text .fas {
+    color: var(--black);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    margin: 0 7px;
+    font-size: 1.3em;
+}
+
+@keyframes background-sparkle {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* --- Main Content & Video Section --- */
+.main-content {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main-video-section {
+    background-color: var(--black);
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    text-align: center;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 0;
+    height: calc(100vh - 60px - 40px);
+    /* Adjust based on header/marquee height */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.main-video-section video {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.experience-section {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 900px;
+    background: none;
+    box-shadow: none;
+    padding: 5px 0;
+    border-radius: 0;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 5;
+    text-align: center;
+}
+
+.experience-section h1 {
+    font-size: 2.0em;
+    margin-bottom: 0;
+    line-height: 1.1;
+    background: linear-gradient(to right, var(--white), #FFDDEE);
+    /* Adjusted for consistency */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 192, 203, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.experience-section h1 .highlight-name {
+    display: inline;
+    font-size: 1.0em;
+    margin: 0;
+    background: var(--highlight-yellow-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 15px rgba(0, 255, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.experience-section h1 .highlight-name:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.9), 0 0 20px rgba(0, 255, 0, 0.7);
+}
+
+.experience-section h1 .fas {
+    background: linear-gradient(to right, var(--primary-red), var(--highlight-yellow-green));
+    /* Adjusted for consistency */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.9em;
+    margin: 0 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.explore-button {
+    padding: 8px 20px;
+    font-size: 1.0em;
+}
+
+/* --- Video Controls --- */
+.video-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#volume-toggle-button {
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Using rgba for semi-transparency */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#volume-toggle-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+#volume-toggle-button i {
+    color: var(--white);
+    font-size: 18px;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 8px;
+    background: #555;
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    border-radius: 4px;
+    margin-right: 5px;
+    pointer-events: none;
+}
+
+.volume-slider.visible {
+    opacity: 1;
+    width: 100px;
+    pointer-events: auto;
+}
+
+.volume-slider::-webkit-slider-thumb,
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-red);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover,
+.volume-slider::-moz-range-thumb:hover {
+    background: var(--secondary-pink);
+    transform: scale(1.1);
+}
+
+.volume-slider::-webkit-slider-runnable-track,
+.volume-slider::-moz-range-track {
+    background: linear-gradient(to right, var(--primary-red), var(--secondary-pink));
+    border-radius: 4px;
+    height: 8px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .experience-section h1 {
+        font-size: 1.8em;
+        white-space: normal;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .experience-section h1 .fas {
+        font-size: 1.2em;
+        margin: 0;
+    }
+
+    .explore-button {
+        padding: 6px 15px;
+        font-size: 0.9em;
+    }
+
+    .experience-section h1 .highlight-name {
+        font-size: 1.0em;
+    }
+}

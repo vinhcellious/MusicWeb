@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinhCellious - Trải nghiệm Âm nhạc đỉnh cao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="spotify-header">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="./Images/logo.png" alt="VinhCellious Logo" class="new-logo">
+            </a>
+        </div>
+        <div class="header-center-content">
+            <div class="search-and-icons">
+                <i class="fas fa-home home-icon"></i>
+                <div class="search-bar">
+                    <i class="fas fa-search" style="color: #b3b3b3; margin-right: 10px;"></i>
+                    <input type="text" placeholder="Bạn muốn nghe gì?">
+                </div>
+                <i class="fas fa-bell notification-icon"></i>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="./premium.html" class="nav-link">Premium <i class="fas fa-crown animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Hỗ trợ <i class="fas fa-info-circle animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Tải xuống <i class="fas fa-download animated-icon-small"></i></a>
+            <span class="separator">|</span>
+            <a href="#" class="nav-link">Cài đặt ứng dụng <i class="fas fa-mobile-alt animated-icon-small"></i></a>
+
+            <div id="auth-buttons">
+                <a href="./register.html" class="register-button"><span>Đăng ký</span></a>
+                <a href="./login.html" class="login-button"><span>Đăng nhập</span></a>
+            </div>
+
+            <div id="user-profile" class="hidden">
+                <img src="./Images/default-avatar.png" alt="Avatar" class="user-avatar" id="header-user-avatar">
+                <span class="user-greeting">Xin chào, <span id="display-username"></span>!</span>
+                <div class="profile-dropdown">
+                    <a href="./profile.html" id="profile-link">Hồ sơ của tôi</a>
+                    <a href="#" id="logout-button">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="slogan-marquee-container">
+        <div class="slogan-text">
+            Chào mừng bạn đến với VinhCellious! <i class="fas fa-music animated-icon"></i> <i
+                class="fas fa-headphones animated-icon"></i> <i class="fas fa-podcast animated-icon"></i> Khám phá âm
+            nhạc đỉnh cao và podcast hấp dẫn! <i class="fas fa-star animated-icon"></i> <i
+                class="fas fa-compact-disc animated-icon"></i> Trải nghiệm không giới hạn! <i
+                class="fas fa-heart animated-icon"></i>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="main-video-section">
+            <iframe> id="background-video" autoplay loop playsinline muted>
+                <source src="https://youtu.be/3eNl2hUidPs?si=ZR-gCwDmnpPRLFbC" type="video/mp4">
+            </iframe>>
+            <div class="experience-section">
+                <h1>
+                    <i class="fas fa-play-circle animated-icon"></i>
+                    Trải nghiệm Âm nhạc đỉnh cao tại <span class="highlight-name">""VinhCellious!""</span>
+                    <i class="fas fa-headphones animated-icon"></i>
+                </h1>
+                <button class="explore-button" onclick="location.href='./khamphangay.html'"><span>Khám phá
+                        ngay</span></button>
+            </div>
+
+            <div class="video-controls">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5"
+                    class="volume-slider hidden">
+                <button id="volume-toggle-button">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-columns">
+            <div class="footer-column footer-brand">
+                <img src="./Images/logo-footer.png" alt="VinhCellious Logo" class="footer-logo">
+                <h3 class="footer-title footer-contact-title"><i class="fas fa-map-marker-alt footer-icon"></i> Địa chỉ
+                </h3>
+                <div class="contact-info">
+                    <p>Số 123, đường ABC, quận XYZ, TP. Hồ Chí Minh</p>
+                    <p><i class="fas fa-phone footer-icon"></i> Điện thoại: (098) 772939</p>
+                    <p><i class="far fa-envelope footer-icon"></i> Email: vinhcellious.edu.vn</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Công ty</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Việc làm</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Cộng đồng</h3>
+                <ul>
+                    <li><a href="#">For Artists</a></li>
+                    <li><a href="#">Nhà phát triển</a></li>
+                    <li><a href="#">Quảng cáo</a></li>
+                    <li><a href="#">Nhà đầu tư</a></li>
+                    <li><a href="#">Nhà cung cấp</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Liên kết hữu ích</h3>
+                <ul>
+                    <li><a href="#">Hỗ trợ</a></li>
+                    <li><a href="#">Ứng dụng di động miễn phí</a></li>
+                </ul>
+                <h3 class="footer-title footer-packages-title">Premium by VinhCellious</h3>
+                <ul>
+                    <li><a href="#">Premium</a></li>
+                    <li><a href="#">Miễn phí</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-map">
+                <h3 class="footer-title"><i class="far fa-clock footer-icon"></i> Giờ làm việc</h3>
+                <p>Thứ 2 - Thứ 6: 24/24h</p>
+                <p>Thứ 7: 24/24h</p>
+                <p>Chủ nhật: 24/24h</p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.667820120155!2d106.68114097495093!3d10.760677589389274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f11ad433e31%3A0xc3b8a362e6047c32!2zMTEzIE5nLiAyNCDEkHguIELhuqFjaCDEkGlsZyBOaMOqIEPhur8sIFBoxrDhu5ngyIELu4hu!5e0!3m2!1svi!2s!4v1701388800000!5m2!1svi!2s"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2025 VinhCellious</p>
+            </div>
+            <div class="footer-legal-links">
+                <a href="#">Pháp lý</a>
+                <a href="#">Trung tâm bảo mật</a>
+                <a href="#">Chính sách quyền riêng tư</a>
+                <a href="#">Cookie</a>
+                <a href="#">Giới thiệu quảng cáo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./Js/common.js"></script>
+    <script src="./Js/video-controls.js"></script>
+</body>
+
+</html>
